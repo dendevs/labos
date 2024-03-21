@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- metas -->
+    <meta charset="UTF-8"> <!-- utf-8 permet l'encodage de caractère accentué sans problème -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- links -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/night-owl.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css"/> <!-- un lien vers une ressources externes -->
+
+    <!-- others -->
+    <title>Labos Web</title> <!-- le titre de ma page visible dans l'onglet du navigateur -->
+</head>
+
+<body>
+
+<header>
+    <!-- hero -->
+    <div id="hero">
+        <a href="/">
+        <img src="../assets/img/logo.png" alt="web page icon as logo of site">
+        </a>
+        <h1>Labos Web</h1>
+    </div>
+
+    <!-- menu -->
+    <nav>
+        <ul>
+            <li>
+                <div class="dropdown">
+                    <button>Html</button>
+                    <div class="dropdown-options">
+                        <a href="https://google.fr">TODO</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <button>Css</button>
+                    <div class="dropdown-options">
+                        <a href="../css/intro.html">Intro</a>
+                        <a href="../css/add.html">Ajout</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <button>Outils</button>
+                    <div class="dropdown-options">
+                        <a href="https://google.fr">TODO</a>
+                    </div>
+                </div>
+        </ul>
+    </nav>
+</header>
+
+<!-- main -->
+<main>
+    <h1>Les Bases</h1>
+
+    <section>
+        <!-- utility -->
+        <article>
+            <h2>Sert à quoi ? </h2>
+            <p>
+                Le CSS (Cascading Style Sheets) est un langage de feuilles de style utilisé pour décrire la présentation d'un document écrit en langage de balisage comme HTML. Le CSS permet de contrôler la mise en forme et la mise en page des éléments d'une page web, tels que la couleur, la taille, la police, la disposition et d'autres aspects visuels.
+            </p>
+        </article>
+
+        <!-- install -->
+        <article>
+            <h2>Installer ? </h2>
+            <p>Css est nativement comprit par le navigateur web. Il ne faut rien installer mais simplement incluer ou lier notre css dans notre page web.</p>
+            <p>Au niveau du navigateur c'est le moteur de rendu qui va se charger de comprendre le css et en réaliser l'affichage. Css est une façon de demander à notre navigateur de mettre en couleur, ajouter des espaces, disposé notre html</p>
+        </article>
+
+        <!-- integration -->
+        <article>
+            <h2>Intégration</h2>
+            <!-- css in header -->
+            <h3>Dans le HTML</h3>
+            <p>On peut utiliser la base header d'html pour y inclure une balise style afin d'y ajouter notre css</p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Title of the document&lt;/title&gt;
+    &lt;style&gt;body {background-color: red}&lt;/style&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+                  Fond en couleur rouge
+  &lt;/body&gt;
+
+&lt;/html&gt;
+              </code>
+          </pre>
+            <p class="warning">L'inconvénient de cette methode c'est qu'elle oblige à mettre tout son css dans le head ce qui rend le tout pas très lisible.</p>
+
+            <!-- css tag -->
+            <h3>Dans la balise html</h3>
+            <p>Chaque balise html possède l'attribut style. Celui ci permet d'ajouter du css qui va s'appliquer uniquement sur la balise en question</p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Title of the document&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body style="background-color: red"&gt;
+                  Fond en couleur rouge
+  &lt;/body&gt;
+
+&lt;/html&gt;
+              </code>
+          </pre>
+            <p class="warning">Il est impossible de généraliser et réutiliser le css. Celui ci va être limité à la balise html</p>
+
+            <!-- styles.css -->
+            <h3>Un fichier séparé</h3>
+            <p>Il est possible de joindre un fichier a notre page html.<br>On va ainsi pouvoir séparer l'html du css et réutiliser du css</p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Title of the document&lt;/title&gt;
+    &lt;link href=&quot;styles/style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+     Fond en couleur rouge
+  &lt;/body&gt;
+
+&lt;/html&gt;
+              </code>
+          </pre>
+            <p>Et on ajoute notre css dans le fichier style.css qui ici se trouve lui mm dans le repertoire styles</p>
+            <pre>
+              <code class="language-css">
+body {
+background-color: red;
+}
+              </code>
+          </pre>
+
+            <img src="https://helpx.adobe.com/content/dam/help/en/dreamweaver/how-to/anatomy-of-website-construction/jcr%3Acontent/main-pars/image0/anatomy-css-2.jpg.img.jpg" alt="image of html plus css code done html nice page" class="responsive-img">
+        </article>
+
+        <!-- link-->
+        <article>
+            <h2>Lien entre CSS et HTML </h2>
+            <p>Pour appliquer un css sur un élément html on va utiliser un selecteur.<br>
+                Le selecteur et un moyen d'indiquer à CSS l'endroit dans notre page html où il doit s'appliquer.<br>
+                Chaque balise html est elle un selecteur. C'est le selecteur le plus simple et générale.<br>
+                Si je désire définir une taille de police de caractère pour mon texte ( balise p ) je vais pouvoir indiquer la base comme selecteur et lui attributé une déclaration.
+            </p>
+            <pre>
+              <code class="language-css">
+p {
+/* le contenu de mon tag p devrat prendre une taille de 34 pixel */
+font-size: 34px;
+}
+              </code>
+          </pre>
+
+            <p>Il est possible de chainer les element html pour constuire un selecteur plus précis.<br>
+            Par exemple body p a est un selecteur qui ne cible que les balises a se trouvant dans un balise p elle même dans la balise body
+            </p>
+            <pre>
+              <code class="language-css">
+/* selecteur précis */
+body p a { font-size: 12px: }
+/* selecteur général */
+a {font-size: 34px;}
+              </code>
+          </pre>
+            <h3>Class et Id</h3>
+            <p>Il est possible pour chaque balise html d'ajouter un attribut class ou id<br><br>
+                Une <b>class</b> est un sélecteur utilisé pour appliquer un ensemble de styles à un ou plusieurs éléments HTML.<br>
+                Elle permet de regrouper des styles spécifiques sous un nom unique, qui peut ensuite être réutilisé sur plusieurs éléments HTML sans avoir à répéter les mêmes styles à chaque fois.<br><br>
+                Un <b>id</b> est un sélecteur utilisé pour appliquer des styles à un élément HTML spécifique.<br>
+                Contrairement aux classes, qui peuvent être réutilisées plusieurs fois dans un document HTML, un id est unique dans un document.
+            </p>
+            <pre>
+              <code class="language-html">
+&lt;div id=&quot;logo&quot;&gt;
+&lt;img src=&quot;logo.png&quot; alt=&quot;image du logo&quot;&gt;MyLogo
+&lt;/div&gt;
+
+&lt;p class=info-box&gt;
+ma box 1
+&lt;/p&gt;
+
+&lt;p class=info-box&gt;
+ma box avec le mm style que ma box 1
+&lt;/p&gt;
+
+&lt;p&gt;
+Aucun style!
+&lt;/p&gt;
+              </code>
+          </pre>
+            <pre>
+              <code class="language-css">
+/* class se préfix avec un . devant le nom. Le nom est au choix du développeur */
+.info-box { font-size: 12px: }
+/* id lui se préfix avec un #  */
+#logo {font-size: 34px;}
+              </code>
+          </pre>
+
+        </article>
+
+        <article>
+            <h2>Cascade ?</h2>
+            <p>
+                Css s'applique en cascade sur la structure html c'est à dire qu'un style appliquer sur une balise se répercute sur ses enfants <br>
+                Il faut se souvenir que chaque element html se trouve lui même dans un élément parent.
+            </p>
+            <img src="https://graphizm.fr/fcil/schematisations-structure-html/img/structure-HTML-01.png" alt="html strucutre" class="responsive-img">
+            <p>Si je donne un background-color a mon body, ses éléments enfants vont en bénéficier aussi.<br>
+                Par contre rien n'empéche l'enfant de définir lui même son propre css.
+                Si je désire donner un fond bleu sur mon body ainsi que mon titre ( h1 ) mais avoir une couleur verte pour mon paragraphe je peux
+            </p>
+            <pre>
+              <code class="language-css">
+body {
+    background-color: blue;
+}
+
+p {
+    background-color: green;
+}
+              </code>
+          </pre>
+<p>Le titre h1 va hérité du css appliqué à son parent body et donc s'afficher lui aussi avec un fond bleu.<br>
+    Tandis que que p va lui bénéficier de son propre css et s'afficher avec un fond vert </p>
+            <img src="../assets/img/css-cascade.png" alt="example html with css cascade" class="responsive-img">
+        </article>
+
+        <!-- anatomy -->
+        <article>
+            <h2>Anatomie </h2>
+            <img src="https://ironion.com/wp-content/uploads/2015/06/cssanatomy2.png" alt="anatomie of css" class="responsive-img">
+            <p>Le selecteur est là où le css va s'appliquer.<br>
+                Le contenu est toujours entre {}.<br>
+                Ce contnu se nomme la déclaration.<br>
+                Une déclaration est constitué de 1 à N rule c'est à dire une property accompagné de sa valeur.<br>
+                Les properties sont toute référencés <a href="https://www.w3schools.com/cssref/index.php" target="_blank">sur W3c</a>
+            </p>
+        </article>
+
+        <!-- selector -->
+        <article>
+            <h2>Selector ! </h2>
+            <p>
+                Le selector est le moyen d'indiquer à css où agir. On a vut précédement deux selecteurs: class et id.<br>
+                Il existe toute une serie de selecteur afin de cibler précisement certains element html. <br>
+                Maitriser les selecteurs c'est utile pour le css mais aussi pour le javascript et le scrapping.<br>
+            </p>
+
+            <h3>Selector de type</h3>
+            <p>
+                Assez généraliste et simple, c'est un selecteur qui cible directement un tag html.<br>
+                Le css ajouter en utilisant ce tag va s'appliquer sur tout les element html du même tag.
+            </p>
+            <pre>
+              <code class="language-css">
+a {
+  /* ici on demande que tout les tags a prennent le style sans décoration pour le texte */
+  text-decoration: none;
+ /* Les liens affiché n'auront donc pas de souligné en dessous du texte */
+}
+              </code>
+          </pre>
+            <h3>Selector d'attribut</h3>
+            <p>
+                Pour rappel un tag html peut avoir un attribut comme par exemple pour la balise a qui peut avoir l'attribut title.
+                La selection par attribut permet de cibler tout les élements html ayant cet attribut ou l'attribut et la valeur indiqué.
+            </p>
+            <pre>
+              <code class="language-css">
+a[title] {
+  /* Selectionne tous les liens ayant un title, peut importe la valeur*/
+  color: red;
+}
+
+a[title="logo"] {
+  /* Selectionne tous les liens ayant un title ET la valeur logo*/
+  color: blue;
+}
+              </code>
+          </pre>
+
+            <h3>Selection du voisin</h3>
+            <p>
+                C'est une combinaison de deux selecteurs qui permet de selectionner le prochain élement suivant celui indiqué.
+                Par voisin il faut comprendre l'élément qui se trouve un même niveau dans l'arborescence html.
+            </p>
+            <pre>
+              <code class="language-html">
+&lt;img src=&quot;logo.png&quot; alt=&quot;my logo&quot;/&gt;
+&lt;p&gt;Texte souligné&lt;/p&gt;
+&lt;p&gt;Texte classique&lt;/p&gt;
+              </code>
+            </pre>
+            <pre>
+              <code class="language-css">
+img + p { text-decoration: underline; }
+              </code>
+          </pre>
+
+
+            <h3>Selection des voisins</h3>
+            <p>
+                C'est une combinaison de deux selecteurs qui permet de selectionner les prochains élements d'un type suivant celui indiqué.
+            </p>
+            <pre>
+              <code class="language-html">
+&lt;p&gt;Texte classique&lt;/p&gt;
+&lt;img src=&quot;logo.png&quot; alt=&quot;my logo&quot;/&gt;
+&lt;p&gt;Texte souligné&lt;/p&gt;
+&lt;p&gt;Texte souligné&lt;/p&gt;
+              </code>
+            </pre>
+            <pre>
+              <code class="language-css">
+img ~ p { text-decoration: underline; }
+              </code>
+          </pre>
+
+            <h3>Les enfants</h3>
+            <p>
+                Toujours avec une combinaison il est possible de venir selectionné un élément enfant.<br>
+                C'est à dire un élement html se trouvant dans un autre ( le parent ).
+            </p>
+            <pre>
+              <code class="language-html">
+&lt;article&gt;
+&lt;p&gt;Paragraphe 1 avec un font size 22&lt;/p&gt;
+&lt;p&gt;Paragraphe 2 avec un font size 22&lt;/p&gt;
+&lt;/article&gt;
+&lt;p&gt;Paragraphe 3 normal&lt;/p&gt;
+              </code>
+            </pre>
+            <pre>
+              <code class="language-css">
+article > p { font-size: 22px; }
+              </code>
+          </pre>
+
+            <h3>Les pseudo class</h3>
+            <p>
+                C'est une selection qui se base sur l'état de l'élément.<br>
+                Cet état n'est pas écrit directement en dur dans la page html mais est issut d'une action utilisateur.<br>
+                L'exemple le plus simple et le passage de la souris sur un élement. L'élement recoit à ce moment là la pseudo class hover.<br>
+                les pseudo class commence toujours pas un : ce qui donne :hover
+            </p>
+            <pre>
+              <code class="language-html">
+&lt;article&gt;
+&lt;p&gt;Paragraphe 1 avec un font size 22&lt;/p&gt;
+&lt;p&gt;Paragraphe 2 avec un font size 22&lt;/p&gt;
+&lt;/article&gt;
+&lt;p&gt;Paragraphe 3 normal&lt;/p&gt;
+              </code>
+            </pre>
+            <pre>
+              <code class="language-css">
+ button:hover {
+    /* passe en un bouton bleu et texte blanc au survol */
+     background-color: blue;
+     color: #fff;
+     pointer: grab; /* le cursor souris se transforme en main */
+ }
+a:visited {
+	/* passe le lien en gris une fois visité */
+	color: #808080;
+}
+ul li:last-child {
+    color: red;
+}
+              </code>
+          </pre>
+
+            <h3>On joue !</h3>
+            <a href="https://flukeout.github.io" target="_blank">Dinner</a>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <!-- socials -->
+    <span id="social-networks">
+    <a href="https://github.com" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a>
+  </span>
+
+    <!-- links -->
+    <div id="links">
+        <ul>
+            <li><a href="https://colorhunt.co/palettes/light" target="_blank">Color Hunt</a></li>
+            <li><a href="https://www.color-hex.com/color-palette/106748" target="_blank">Color-Hex</a></li>
+        </ul>
+
+        <!-- links -->
+        <ul>
+        </ul>
+    </div>
+</footer>
+<!-- scripts ( ajout des scripts js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" xmlns="http://www.w3.org/1999/html">
+<head>
+  <!-- metas -->
+  <meta charset="UTF-8"> <!-- utf-8 permet l'encodage de caractère accentué sans problème -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- links -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/night-owl.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css"/> <!-- un lien vers une ressources externes -->
+
+  <!-- others -->
+  <title>Labos Web</title> <!-- le titre de ma page visible dans l'onglet du navigateur -->
+</head>
+
+<body>
+
+<header>
+  <!-- hero -->
+  <div id="hero">
+    <a href="/">
+    <img src="../assets/img/logo.png" alt="web page icon as logo of site">
+    </a>
+    <h1>Labos Web</h1>
+  </div>
+
+  <!-- menu -->
+  <nav>
+    <ul>
+      <li>
+        <div class="dropdown">
+          <button>Html</button>
+          <div class="dropdown-options">
+            <a href="https://google.fr">TODO</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="dropdown">
+          <button>Css</button>
+          <div class="dropdown-options">
+            <a href="">Bases</a>
+            <a href="#">Setting</a>
+            <a href="#">Logout</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="dropdown">
+          <button>Outils</button>
+          <div class="dropdown-options">
+            <a href="https://google.fr">TODO</a>
+          </div>
+        </div>
+    </ul>
+  </nav>
+</header>
+
+<!-- main -->
+<main>
+  <section>
+  <h1>Ajout</h1>
+
+    <!-- utility -->
+    <article>
+      <h2>Sert à quoi ? </h2>
+      <p>
+        On peut avoir besoin de ressources en plus pour realiser notre page web.<br>
+        Css permet de nombreuse chose mais si je désire utiliser des polices de caractères, des icones etc je vais avoir besoin d'ajouter c'est ressources
+      </p>
+    </article>
+  </section>
+
+    <!-- Fonts -->
+  <section>
+    <article>
+      <h2>Font</h2>
+      <p>
+        C'est la police de caractères utiliser pour afficher notre texte.<br>
+        Elle peut être de plusieurs style différents. Nativement css en propose plusieurs.
+      </p>
+      <ul>
+        <li>Serif : Les polices à empattement ont un petit trait aux bords de chaque lettre. Elles créent un sentiment de formalité et d'élégance.</li>
+        <li>Sans-serif : Les polices sans empattement ont des lignes épurées (sans petits traits attachés). Elles créent un aspect moderne et minimaliste.</li>
+        <li>Monospace : Les polices à largeur fixe oû toutes les lettres ont la même largeur fixe. Elles créent un aspect mécanique.</li>
+        <li>Cursive : Les polices cursives imitent l'écriture manuscrite.</li>
+        <li>Fantasy : Les polices fantaisie sont des polices décoratives/joueuses.</li>
+      </ul>
+
+      <img src="https://www.w3schools.com/css/serif.gif" alt="exemples of fonts" class="responsive-img">
+      <p class="info">
+        Le choix de la ou les polices à une importance réel sur le rendue de la page et l'impression qu'elle fait à l'utilisateur.<br>
+        Il est généralement préconiser de ne pas avoir plus de 3 polices différentes afin de garder une certaines cohérence et facilitée de lecture.<br>
+      </p>
+
+      <p>
+        On va trouver de nombreuse polices payantes ou gratuite sur le web. On peut notament aller regarder du coté de <a href="https://fonts.google.com" target="_blank">fonts google</a>
+      </p>
+
+      <h3>Installer une police</h3>
+      <p>
+        Il suffit de la télécharger et unzip. Puis copier le fichier .ttf ( extension largement supportée ) et le placer dans notre repertoire public ( là où se trouve notre page index.html )<br>
+        <img src="../assets/img/css-fonts-01.png" alt="image of font unzip" class="responsive-img"><br>
+        Maintenant il faut indiquer à notre css qu'une nouvelle police doit être prise en compte.<br>
+        Attention que chaque police ajouter augmente la taille de notre fichier css et donc le temps de chargement de notre page.
+      </p>
+      <pre>
+              <code class="language-css">
+/* on l'importe/la définie */
+@font-face {
+    font-family: GreatVibes-Regular;
+    src: url("../fonts/GreatVibes-Regular.ttf");
+}
+
+/* on l'utilise */
+@font-face {
+    font-family: GreatVibes-Regular;
+    src: url("../fonts/GreatVibes-Regular.ttf");
+}
+              </code>
+          </pre>
+    </article>
+  </section>
+
+    <!-- icons -->
+  <section>
+    <!-- utility -->
+    <article>
+      <h2>Les icons </h2>
+      <p>
+        Les icons permette de rajouter du visuel et de la symbolique dans nos pages.<br>
+        Il existe de nombreuse librairies et <a href="https://fontawesome.com/search?q=ok&o=r&m=free" target="_blank">font awesome</a> est une des plus répandue.<br>
+        Pour faire simple on peut utiliser directement un <a href="https://cdnjs.com/libraries/font-awesome" target="_blank">cdn qui met à disposition la library</a><br>
+        Il suffit ensuite de l'inclure depuis notre balise head en utilisant la balise link et précisant l'url.<br>
+      </p>
+    <pre>
+    <code class="language-css">
+&lt;head&gt;
+  &lt;!-- metas --&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;!-- utf-8 permet l&#39;encodage de caractère accentué sans problème --&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+
+  &lt;!-- links --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css&quot; crossorigin=&quot;anonymous&quot;/&gt;
+
+&lt;/head&gt;
+    </code>
+    </pre>
+
+    </article>
+  </section>
+
+  <section>
+    <article>
+      <h2>librairies css</h2>
+      <p>
+        Une librairie réunie des classes css directement applicable sur notre html.<br>
+        On pourrait s'en passer et tout crée soit même à la main mais l'utilisation d'une librairie simplifie la vie et nous permet d'avoir une base de travail.<br>
+        Si je désire ajouter une librairie spécialiser dans la gestion des animations je peux utiliser <a href="https://animate.style" target="_blank" class="responsive-img">animate.css</a><br>
+        Je vais l'ajouter comme n'importe quelle ressources css directement dans le head.<br>
+      </p>
+
+      <pre><code class="language-html">
+&lt;head&gt;
+  &lt;!-- metas --&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;!-- utf-8 permet l&#39;encodage de caractère accentué sans problème --&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+
+  &lt;!-- links --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css&quot;&gt;
+
+&lt;/head&gt;
+      </code></pre>
+
+      <p>Il reste à lire la doc pour savoir comment utiliser la librairie et l'utiliser en ajoutant la classe css animate_animated et ensuite la classe de l'effet désirez animate__bounce</p>
+      <pre><code class="language-html">
+&lt;div id=&quot;hero&quot;&gt;
+    &lt;a href=&quot;/&quot;&gt;
+      &lt;img src=&quot;assets/img/logo.png&quot; alt=&quot;web page icon as logo of site&quot; class=&quot;animate__animated animate__bounce&quot;&gt;
+    &lt;/a&gt;
+    &lt;h1 class=&quot;animate__animated animate__slideInRight&quot;&gt;Labos Web&lt;/h1&gt;
+&lt;/div&gt;
+      </code></pre>
+
+    </article>
+  </section>
+
+  <section>
+    <article>
+      <h2>Framework ? </h2>
+      <p>
+        Un framework est comme une super library qui résout différent problème régulièrement rencontré.<br>
+        Il  peut être vue comme une boite à outils cohérentes mise en place par des spécialistes<br>
+        Souvent un framework css va apporter un style de base ainsi que des composants visuels.<br>
+        Un composant très courant et la Card par exemple.<br>
+      </p>
+
+      <h3>Installation</h3>
+      <p>
+        Il suffit généralement de suivre la doc et d'inclure le fichier css principale dans notre page.<br>
+        Certains framework inclus du javascript qu'il faudrat inclure lui aussi.<br>
+        <a href="https://picocss.com/docs" target="_blank">Pico css</a> est un petit framework qui apporte un certains cadre sans être trop invasif.<br>
+      </p>
+
+      <pre><code class="language-html">
+&lt;link
+  rel=&quot;stylesheet&quot;
+  href=&quot;https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css&quot;
+/&gt;
+      </code></pre>
+    </article>
+  </section>
+
+</main>
+
+<footer>
+  <!-- socials -->
+  <span id="social-networks">
+    <a href="https://github.com" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a>
+  </span>
+
+  <!-- links -->
+  <div id="links">
+    <ul>
+      <li><a href="https://colorhunt.co/palettes/light" target="_blank">Color Hunt</a></li>
+      <li><a href="https://www.color-hex.com/color-palette/106748" target="_blank">Color-Hex</a></li>
+    </ul>
+
+    <!-- links -->
+    <ul>
+    </ul>
+  </div>
+</footer>
+<!-- scripts ( ajout des scripts js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

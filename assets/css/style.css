@@ -1,0 +1,215 @@
+/* Fonts */
+@font-face {
+    font-family: GreatVibes-Regular;
+    src: url("../fonts/GreatVibes-Regular.ttf");
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url("../fonts/Roboto-Black.ttf");
+}
+
+/* General */
+body {
+   font-family: Roboto-Regular, serif;
+    line-height: 1.7rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Roboto-Black, cursive;
+}
+
+.warning {
+    padding: 13px;
+    background-color: orange;
+}
+
+.info{
+    padding: 13px;
+    background-color: lightblue;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+}
+
+/* Layout */
+body {
+    background-color: #FBF9F1;
+    margin: 0;
+}
+
+header {
+    background-color: #92C7CF;
+    font-weight: bolder;
+}
+
+header div#hero h1 {
+    color: #fff;
+    font-family: GreatVibes-Regular, ui-rounded;
+    font-size: 3.1rem;
+}
+
+header div#hero img {
+    padding: 13px;
+}
+
+nav {
+    background-color: #AAD7D9;
+}
+
+main {
+    margin-right: 23px;
+    margin-left: 23px;
+}
+
+
+/* Hero */
+#hero {
+    display: flex;
+    align-items: center;
+}
+
+/* Nav */
+nav {
+    margin-bottom: 37px;
+}
+nav ul {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+}
+
+nav ul li button{
+    padding: 17px;
+    font-size: larger;
+    font-weight: bolder;
+    background-color: #AAD7D9;
+    border: none;
+    color: #000;
+}
+
+nav ul li button:hover {
+    background-color: #92C7CF;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+/* Main */
+
+/* Footer */
+footer {
+    margin-top: 37px;
+    background-color: #E5E1DA;
+    min-height: 233px;
+}
+
+footer span#social-networks {
+    display: flex;
+    height: 67px;
+    padding-right: 19px;
+    justify-content: end;
+    align-items: center;
+    list-style: none;
+}
+
+footer span#social-networks a{
+    color: #000;
+}
+
+footer #links {
+    display: flex;
+    flex-direction: row;
+}
+
+footer #links a {
+    color: #000000;
+    line-height: 2.0rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer #links ul:first-child {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+footer #links ul:first-child li {
+    list-style: none;
+}
+
+footer #links ul:last-child {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    list-style: none;
+}
+
+/* Responsive */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    p {
+        font-size: larger;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    p {
+        font-size: larger;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    main {
+        margin-right: 13%;
+        margin-left: 13%;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    main {
+        margin-right: 23%;
+        margin-left: 23%;
+    }
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-options {
+    padding: 13px;
+    display: none;
+    position: absolute;
+    overflow: auto;
+    background-color: #92C7CF;
+}
+
+.dropdown-options a {
+    color: #000000;
+    padding-top: 7px;
+}
+
+.dropdown:hover .dropdown-options {
+    display: block;
+}
